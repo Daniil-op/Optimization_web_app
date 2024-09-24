@@ -227,6 +227,12 @@ header {
   margin-bottom: 20px;
 }
 
+.task {
+  font-weight: 700;
+  font-size: 23px;
+  color: #000;
+}
+
 .main_task-text-work {
   font-weight: 600;
   font-size: 25px;
@@ -235,6 +241,13 @@ header {
 
 .main_tasks-code-all {
   display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.main_tasks-code-all_lab_four {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
 }
@@ -254,20 +267,18 @@ header {
 }
 
 .main_text-one {
-  font-weight: bold;
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .main_text-two {
   margin-bottom: 20px;
+  font-size: 15px;
 }
 
-.main_task-code pre {
-  background-color: #f4f4f4;
-  padding: 10px;
-  border-radius: 4px;
-  overflow-x: auto;
+.img_task {
+  margin-bottom: 20px;
 }
 
 .footer {

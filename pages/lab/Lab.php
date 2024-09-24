@@ -38,18 +38,18 @@
     </div>
 </header>
 <main>
-  <div class="Lab_two">
+  <div class="Lab_three">
     <div class="main_text">
       <p class="main_text-lab">Лабораторная работа №3</p>
     </div>
   <div class="description">
     <div class="purposes_flex-lab">
     <div class="purposes_text-lab">
-      <p>Цели и задачи:</p>
+      <p class="task">Цели и задачи:</p>
       <p>-Изучение ввода вывода данных, программирование вычисления значения выражения</p>
     </div>
     <div class="tasks_text-lab">
-      <p>Задание к работе:</p>
+      <p class="task">Задание к работе:</p>
       <p>-Реализовать линейно-вычислительный процесс. Решить задачу в соответствии с вариантом.</p>
       <p>-Сделать отчет и прикрепить ссылку на GitHub (footer)</p>
     </div>
@@ -66,52 +66,164 @@
             <div class="main_task-code-one">
                 <div class="main_task-code">
                     <p class="main_text-one">Первая задача</p>
-                    <p class="main_text-two">Найти значение функции y=5(x-2)<sup>5</sup>-√x+4 при данном значении x</p>
-                        <?php
-                            function calculateY($x) {
-                                // Проверка, что x не отрицательное, так как корень из отрицательного числа не определен
-                                if ($x < 0) {
-                                    return "Ошибка: x не может быть отрицательным";
+                    <p class="main_text-two">Дана сторона квадрата a. Найти квадрат его периметра P = 4·a.</p>
+                          <?php
+                                $a = 1;
+                                if ($a < 0)
+                                {
+                                  return "Ошибка: а не может быть отрицательным";
                                 }
-                                // Вычисление значения функции
-                                $y = 5 * pow($x - 2, 5) - sqrt($x) + 4;
-                                return $y;
+                                $p = 4 * $a;
+                                echo "Результат расчета $p при a = $a";
+                              ?>
+                </div>
+            </div>
+            <div class="main_task-code-two">
+                <div class="main_task-code">
+                    <p class="main_text-one">Вторая задача</p>
+                    <p class="main_text-two">Дано расстояние L в сантиметрах. Используя операцию деления нацело, найти количество полных метров в нем (1 метр = 100 см).</p>
+                      <?php
+                               $L = 15;
+                               if ($L < 0)
+                               {
+                                return "Ошибка: L не может быть отрицательным";
+                               }
+                               $l = $L/100;
+                               echo "Результат расчета $l м";
+                            ?>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="Lab_four">
+    <div class="main_text">
+      <p class="main_text-lab">Лабораторная работа №4</p>
+    </div>
+  <div class="description">
+    <div class="purposes_flex-lab">
+    <div class="purposes_text-lab">
+      <p class="task">Цели и задачи:</p>
+      <p>-Изучение разветвляющихся алгоритмов,операторов выбора.</p>
+      <p>-Самостоятельно решить задачи в соответствии с индивидуальным вариантом.</p>
+    </div>
+    <div class="tasks_text-lab">
+      <p class="task">Задание к работе:</p>
+      <p>-Реализовать разветвляющийся вычислительный процесс..</p>
+      <p>-Сделать отчет и прикрепить ссылку на GitHub (footer)</p>
+    </div>
+    </div>
+    <div class="img_description">
+      <img class="img_description-lab" src="./assets_lab/math.png" alt="">
+    </div>
+  </div>
+  <div class="main_task-container">
+        <div class="main_task-text">
+            <p class="main_task-text-work">Ход работы</p>
+        </div>
+        <div class="main_tasks-code-all_lab_four">
+            <div class="main_task-code-one">
+                <div class="main_task-code">
+                    <p class="main_text-one">Первая задача</p>
+                    <p class="main_text-two">Дано целое число A. Проверить истинность высказывания: «Число A является положительным и двузначным».</p>
+                            <?php
+                            $A = "a";
+                            if ($A != (int)$A) {
+                                echo "Ошибка: $A не является числом";
+                            } else {
+                                if ($A > 0) {
+                                    $answer = "положительным";
+                                } else {
+                                    $answer = "неположительным";
+                                }
+                            
+                                if (($A > 9 && $A <= 99) || ($A < -9 && $A >= -99)) {
+                                    $answer_kol = "2-ух значным";
+                                } else {
+                                    $answer_kol = "не 2-ух значным";
+                                }
+                            
+                                echo "Число является $answer, $answer_kol";
                             }
-                            // Пример использования функции
-                            $x = -25;
-                            $result = calculateY($x);
-                            echo "Значение функции при x = $x равно $result";
                             ?>
                 </div>
             </div>
             <div class="main_task-code-two">
                 <div class="main_task-code">
                     <p class="main_text-one">Вторая задача</p>
-                    <p class="main_text-two">Дано четырехзначное число. Вывести число, полученное при перестановке первой и последней цифр исходного числа (например, 1234 перейдет в 4231)</p>
-                      <?php
-                        function swapFirstAndLastDigit($number) {
-                            // Преобразуем число в строку
-                            $numberStr = (string)$number;
-                            // Проверяем, что число действительно четырехзначное
-                            if (strlen($numberStr) != 4) {
-                                return "Ошибка: число должно быть четырехзначным";
-                            }
-                            // Получаем первую и последнюю цифры
-                            $firstDigit = $numberStr[0];
-                            $lastDigit = $numberStr[3];
-                            // Получаем средние цифры
-                            $middlePart = $numberStr[1] . $numberStr[2];
-                            // Формируем новое число
-                            $newNumberStr = $lastDigit . $middlePart . $firstDigit;
-                            // Преобразуем строку обратно в число
-                            $newNumber = (int)$newNumberStr;
-                            return $newNumber;
+                    <p class="main_text-two">Дано целое число. Если оно является положительным и нечетным,  то прибавить  к нему 1; в противном случае вычесть из него 2. Вывести полученное число.</p>
+                 <?php
+                    $A = 4;
+                    if ($A != (int)$A) {
+                        echo "Ошибка: $A не является числом";
+                    } else {
+                        if (($A > 0) && ($A % 2 == 0)) {
+                            $A++;
+                            echo "Удовлетворяет условию и A=$A";
+                        } else {
+                            echo "Неудовлетворяет условию и A=$A";
                         }
-                        // Пример использования функции
-                        $number = 8008; // Замените это значение на нужное вам
-                        $result = swapFirstAndLastDigit($number);
-                        echo "Новое число $number после перестановки первой и последней цифр: $result";
-                        ?>
+                    }
+                    ?>
+                </div>
+            </div>
+            <div class="main_task-code-one">
+                <div class="main_task-code">
+                    <p class="main_text-one">Третья задача</p>
+                    <img class="img_task" src="./assets_lab/task3.jpg" alt="">
+                            <?php
+                            $a = 2.1;
+                            $b = 6.7;
+                            $e = 2.71828;
+                            $x = -2.37;
+                            if ($x<-2){
+                                $y=($x**3)+2*$a;
+                                echo "При данном значении X=$x.<br/>";
+                                echo "И при условии x < -2, функция y=$y";
+                            }
+                                if (($x >= -2) && ($x <= 5)){
+                                    $y1=(log(abs(cos($b*$x))));
+                                    echo "При данном значении X=$x.<br/>";
+                                    echo "И при условии x >= -2 или x <= 5, функция y=$y1";
+                                }
+                                    if ($x > 5){
+                                        $y2=(($x**2)*($e**$x));
+                                        echo "При данном значении X=$x.<br/>";
+                                        echo "И при условии x > 5, функция y=$y2";
+                                    }
+                            ?>
+                </div>
+            </div>
+            <div class="main_task-code-one">
+                <div class="main_task-code">
+                    <p class="main_text-one">Четвертая задача</p>
+                    <img class="img_task" src="./assets_lab/task4.jpg" alt="">
+                            <?php
+                            $a = 2.1;
+                            $b = 6.7;
+                            $e = 2.71828;
+                            $x = -2;
+                            switch($x){
+                                case -3:
+                                    $y=($x**3)+2*$a;
+                                    echo "При данном значении X=$x.<br/>";
+                                    echo "И при условии x < -2, функция y=$y";
+                                    break;
+                                case 4:
+                                    $y1=(log(abs(cos($b*$x))));
+                                    echo "При данном значении X=$x.<br/>";
+                                    echo "И при условии x >= -2 или x <= 5, функция y=$y1";
+                                    break;
+                                case 6:
+                                     $y2=(($x**2)*($e**$x));
+                                    echo "При данном значении X=$x.<br/>";
+                                    echo "И при условии x > 5, функция y=$y2";
+                                    break;
+                                default:
+                                   echo "При данном значении X=$x.<br/>";
+                                   echo "Функция Y не высчитывается.";
+                            }
+                            ?>
                 </div>
             </div>
         </div>
