@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
@@ -22,13 +22,23 @@
         <h1 class="logo_name">LaboratoryISP</h1>
       </div>
     </div>
+    <div class="menu">
+    <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+    <label for="burger-checkbox" class="burger"></label>
+    <ul class="menu-list">
+        <li><a href="../../index.php" class="menu-item">Главная</a><li>
+        <li><a href="./Lab.php" class="menu-item">Лабы</a><li>
+        <li><a href="#" class="menu-item">Задания</a><li>
+        <li><a href="#" class="menu-item">Лекции</a><li>
+    </ul>
+</div>
     <div class=menu_link> <!--Навигация-->
       <div class="nav">
         <ul class="nav_object">
-          <li><a href="../../Laboratory.php">Home</a></li>   <!--Если ставим ../ то это переход на новую ветку выше-->
-            <li><a href="./Lab.php">Lab</a></li>
-            <li><a href="...">Tasks</a></li>
-            <li><a href="...">Lection</a></li>
+          <li><a href="../../index.php">Главная</a></li>   <!--Если ставим ../ то это переход на новую ветку выше-->
+            <li><a href="./Lab.php">Лабы</a></li>
+            <li><a href="...">Задания</a></li>
+            <li><a href="...">Лекции</a></li>
         </ul>
       </div>
     </div>
@@ -55,7 +65,7 @@
     </div>
     </div>
     <div class="img_description">
-      <img class="img_description-lab" src="../../assets/php.svg" alt="">
+      <img class="img_description-lab" src="./assets_lab/php.svg" alt="">
     </div>
   </div>
   <div class="main_task-container">
@@ -197,7 +207,7 @@
                 <div class="main_task-code">
                     <p class="main_text-one">Четвертая задача</p>
                     <img class="img_task" src="./assets_lab/task4.jpg" alt="">
-                          <?php
+                            <?php
                             $a = 2.1;
                             $b = 6.7;
                             $x = -3;
@@ -222,6 +232,81 @@
                                    echo "Функция Y не высчитывается.";
                             }
                             ?>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+   <div class="Lab_four">
+    <div class="main_text">
+      <p class="main_text-lab">Лабораторная работа №5</p>
+    </div>
+  <div class="description">
+    <div class="purposes_flex-lab">
+    <div class="purposes_text-lab">
+      <p class="task">Цели и задачи:</p>
+      <p>-Изучение циклических алгоритмов, операторов цикла, программирование </p>
+      <p>циклического вычислительного процесса.</p>
+    </div>
+    <div class="tasks_text-lab">
+      <p class="task">Задание к работе:</p>
+      <p>-Реализовать  циклический вычислительный  процесс.</p>
+      <p>-Самостоятельно решить задачи в соответствии с индивидуальным вариантом.</p>
+    </div>
+    </div>
+    <div class="img_description">
+      <img class="img_description-lab" src="./assets_lab/math.png" alt="">
+    </div>
+  </div>
+  <div class="main_task-container">
+        <div class="main_task-text">
+            <p class="main_task-text-work">Ход работы</p>
+        </div>
+        <div class="main_tasks-code-all_lab_four">
+            <div class="main_task-code-one">
+                <div class="main_task-code">
+                    <p class="main_text-one">Первая задача</p>
+                    <p class="main_text-two">Даны десять вещественных чисел. Найти произведение всех четных чисел.</p>
+                            <?php
+                            $numbers = array(6,5,3,1,6,-6,9,4,10,4); //Создаем массив с 10 числами
+                            $storage = 1; //Вводим переменную для присвоения четных чисел, 1 так как умножаться на 1 любое число
+                            for ($i = 0; $i < count($numbers); $i++) { //Начинаем перебор массива 
+                                if (floor($numbers[$i]) % 2 == 0) { //Если число не делится на на 2 без остатка, то отправляется домой
+                                    $storage = $storage * $numbers[$i];
+                                }
+                            }
+                            echo "Произведение всех четных чисел равно:  $storage "; //Вывод произведения чисел
+                            ?>
+                </div>
+            </div>
+            <div class="main_task-code-two">
+                <div class="main_task-code">
+                    <p class="main_text-one">Вторая задача</p>
+                    <p class="main_text-two">Вывести на экран ряд натуральных чисел от минимума до максимума с шагом. Например, если минимум 10, максимум 35, шаг 5, то вывод должен быть таким: 10 15 20 25 30 35. Минимум, максимум и шаг указываются пользователем (считываются с клавиатуры).</p>
+                   <form method="post" class="form-container">
+                        <div class="form-group">
+                        <input type="number" name="min" placeholder="min">
+                        </div>
+                        <div class="form-group">
+                        <input type="number" name="max" placeholder="max">
+                        </div>
+                        <div class="form-group">
+                        <input type="number" name="step" placeholder="step">
+                        </div>
+                        <input type="submit" value="Выполнить">
+                   </form>
+                   <?php
+                if (isset($_POST['min']) && isset($_POST['max']) && isset($_POST['step'])) { //Проверяем, были ли отправлены данные методом POST с ключами 'min', 'max' и 'step'
+                    $min = $_POST['min']; //Если да присваиваем значение
+                    $max = $_POST['max']; //Если да присваиваем значение
+                    $step = $_POST['step']; //Если да присваиваем значение
+                    
+                    echo "При min=$min,max=$max и шаге=$step.[] = "; //Выводим заданные значения
+                    for ($i = $min; $i <= $max; $i += $step) {
+                      echo $i . ";"; //Выводим подходящие значения с ;
+                    }
+                }
+                    ?>
                 </div>
             </div>
         </div>
