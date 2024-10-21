@@ -1,52 +1,7 @@
-    <!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style_Lab.css">
-  <link rel="icon" href="./assets_lab/logo.svg" type="image/x-icon"> <!--Иконка для страницы-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>LaboratoryISP</title>
-</head>
+<? include('./template/head.php')?>
+<link rel="stylesheet" href="./styles/style_lab.css">
 <body>
-  <header>
-  <div class="main_menu">
-    <div class="logotype">
-        <img class="icon_svg" src="./assets_lab/logo.svg" width="60" 
-     height="60" alt=""> <!--Логотип-->
-        <h1 class="logo_name">LaboratoryISP</h1>
-      </div>
-    </div>
-    <div class="menu">
-    <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
-    <label for="burger-checkbox" class="burger"></label>
-    <ul class="menu-list">
-        <li><a href="../../index.php" class="menu-item">Главная</a><li>
-        <li><a href="./Lab.php" class="menu-item">Лабы</a><li>
-        <li><a href="#" class="menu-item">Задания</a><li>
-        <li><a href="#" class="menu-item">Лекции</a><li>
-    </ul>
-</div>
-    <div class=menu_link> <!--Навигация-->
-      <div class="nav">
-        <ul class="nav_object">
-          <li><a href="../../index.php">Главная</a></li>   <!--Если ставим ../ то это переход на новую ветку выше-->
-            <li><a href="./Lab.php">Лабы</a></li>
-            <li><a href="...">Задания</a></li>
-            <li><a href="...">Лекции</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="login_registration-button"> <!--Форма регистрации и логина-->
-      <button class="login_button">Вход</button>
-      <button class="register_button">Регистрация</button>
-    </div>
-</header>
+    <? include('template/header.php')?>
 <main>
   <div class="Lab_three">
     <div class="main_text">
@@ -312,28 +267,74 @@
         </div>
     </div>
   </div>
-</main>
-<footer>
-  <div class="footer">
-    <div class="row">
-        <a href="https://web.telegram.org/a/#-1002033704397"><i class="fa fa-telegram"></i></a>
-        <a href="https://vk.com/lil_bo_peep_l"><i class="fa fa-vk"></i></a>
-        <a href="https://github.com/Daniil-op"><i class="fa fa-github"></i></a>
-        <a href="https://www.youtube.com/watch?v=_5N79HI7228"><i class="fa fa-instagram"></i></a>
+   <div class="Lab_four">
+    <div class="main_text">
+      <p class="main_text-lab">Лабораторная работа №6</p>
     </div>
-      <div class="row">
-        <ul>
-          <li><a href="#">Contact us</a></li>
-          <li><a href="#">Our Services</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
-          <li><a href="#">Career</a></li>
-        </ul>
-      </div>
-    <div class="row">
-      <p class="row_text-down">ALTGTU Copyright © 2024 ALTGTU - All rights reserved || Making By: Daniil Sheveldin</p>
+  <div class="description">
+    <div class="purposes_flex-lab">
+    <div class="purposes_text-lab">
+      <p class="task">Цели и задачи:</p>
+      <p>-Изучение  алгоритмов  формирования  и  обработки одномерных  массивов.</p>
+      <p>-Программирование  и  отладка  программ  формирования и обработки массивов.</p>
+    </div>
+    <div class="tasks_text-lab">
+      <p class="task">Задание к работе:</p>
+      <p>-Написать  программу  решения  задачи  в  соответствии  с индивидуальным вариантом.</p>
+      <p>-Сделать отчет и прикрепить ссылку на GitHub (footer)</p>
+    </div>
+    </div>
+    <div class="img_description">
+      <img class="img_description-lab" src="./assets_lab/math.png" alt="">
     </div>
   </div>
-</footer>
+  <div class="main_task-container">
+        <div class="main_task-text">
+            <p class="main_task-text-work">Ход работы</p>
+        </div>
+        <div class="main_tasks-code-all_lab_four">
+            <div class="main_task-code-one">
+                <div class="main_task-code">
+                    <p class="main_text-one">Первая задача</p>
+                    <p class="main_text-two">Дано  целое  число  N    (> 0).  Сформировать   и  вывести  целочисленный массив размера N, содержащий N первых положительных нечетных чисел: 1, 3, 5, . . . .</p>
+                            <?php
+                            $N = 5; // задаем значение N
+                            $arr = array(); // создаем пустой массив
+                            for ($i = 1; $i <= $N; $i++) {
+                                $arr[] = $i * 2 - 1; // добавляем в массив следующее нечетное число
+                                echo $arr[$i - 1]; // выводим элемент массива на экран
+                                if ($i < $N) {
+                                    echo ', '; // выводим запятую и пробел, если это не последний элемент массива
+                                }
+                            }
+                            echo " При N=$N";
+                            ?>
+                </div>
+            </div>
+            <div class="main_task-code-two">
+                <div class="main_task-code">
+                    <p class="main_text-one">Вторая задача</p>
+                    <p class="main_text-two">Даны два массива A и B одинакового размера N. Сформировать новый массив  C  того же размера, каждый элемент  которого равен  максимальному из элементов массивов A и B с тем же индексом.</p>
+                     <?php
+                        $N = 5; // задаем размер массивов
+                        $A = array(1, 3, 5, 7, 9); // задаем массив A
+                        $B = array(2, 4, 6, 8, 10); // задаем массив B
+                        $C = array(); // создаем пустой массив C
+                        for ($i = 0; $i < $N; $i++) {
+                            if ($A[$i] > $B[$i]) {
+                                $C[] = $A[$i]; // если элемент массива A больше элемента массива B, добавляем элемент массива A в массив C
+                            } else {
+                                $C[] = $B[$i]; // иначе добавляем элемент массива B в массив C
+                            }
+                            echo $C[$i]; // выводим элемент массива C на экран
+                            if ($i < $N - 1) {
+                                echo ', '; // выводим запятую и пробел, если это не последний элемент массива C
+                            }
+                        }
+                        ?>
+                </div>
+            </div>
+</main>
+<? include('template/footer.php')?>
 </body>
 </html>
