@@ -1,7 +1,24 @@
-<? include('./template/head.php')?>
-<link rel="stylesheet" href="./styles/style_lab.css">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/style_lab.css">
+  <link rel="icon" href="/template/assets_index/logo.svg" type="image/x-icon"> <!--Иконка для страницы-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>LaboratoryISP</title>
+</head>
 <body>
-    <? include('template/header.php')?>
+    <?php include('../template/header.php');
+    render_header();
+    include('../template/menu_lab.php');
+    render_menu();
+    ?>
 <main>
   <div class="Lab_three">
     <div class="main_text">
@@ -298,13 +315,16 @@
                     <p class="main_text-one">Первая задача</p>
                     <p class="main_text-two">Дано  целое  число  N    (> 0).  Сформировать   и  вывести  целочисленный массив размера N, содержащий N первых положительных нечетных чисел: 1, 3, 5, . . . .</p>
                             <?php
-                            $N = 5; // задаем значение N
+                            $N = 1; // задаем значение N
                             $arr = array(); // создаем пустой массив
+                            if ($N<0){
+                                echo "Ошибка, N<0";
+                            }
                             for ($i = 1; $i <= $N; $i++) {
                                 $arr[] = $i * 2 - 1; // добавляем в массив следующее нечетное число
                                 echo $arr[$i - 1]; // выводим элемент массива на экран
                                 if ($i < $N) {
-                                    echo ', '; // выводим запятую и пробел, если это не последний элемент массива
+                                    echo ", "; // выводим запятую и пробел, если это не последний элемент массива
                                 }
                             }
                             echo " При N=$N";
@@ -317,8 +337,8 @@
                     <p class="main_text-two">Даны два массива A и B одинакового размера N. Сформировать новый массив  C  того же размера, каждый элемент  которого равен  максимальному из элементов массивов A и B с тем же индексом.</p>
                      <?php
                         $N = 5; // задаем размер массивов
-                        $A = array(1, 3, 5, 7, 9); // задаем массив A
-                        $B = array(2, 4, 6, 8, 10); // задаем массив B
+                        $A = array(-2, -2, -2, -2, -2); // задаем массив A
+                        $B = array(0, 1, 1, 1, 0); // задаем массив B
                         $C = array(); // создаем пустой массив C
                         for ($i = 0; $i < $N; $i++) {
                             if ($A[$i] > $B[$i]) {
@@ -328,13 +348,211 @@
                             }
                             echo $C[$i]; // выводим элемент массива C на экран
                             if ($i < $N - 1) {
-                                echo ', '; // выводим запятую и пробел, если это не последний элемент массива C
+                                echo ", "; // выводим запятую и пробел, если это не последний элемент массива C
                             }
                         }
                         ?>
                 </div>
             </div>
+            </div>
+            </div>
+            <div class="Lab_four">
+    <div class="main_text">
+      <p class="main_text-lab">Лабораторная работа №7</p>
+    </div>
+  <div class="description">
+    <div class="purposes_flex-lab">
+    <div class="purposes_text-lab">
+      <p class="task">Цели и задачи:</p>
+      <p>-Изучение  алгоритмов  формирования  и  обработки двумерных массивов.</p>
+      <p>-Программирование и отладка программ формирования и обработки матриц.</p>
+    </div>
+    <div class="tasks_text-lab">
+      <p class="task">Задание к работе:</p>
+      <p>-Написать  программу решения  задачи  в соответствии с  индивидуальным  вариантом.</p>
+      <p>-Сделать отчет и прикрепить ссылку на GitHub (footer)</p>
+    </div>
+    </div>
+    <div class="img_description">
+      <img class="img_description-lab" src="./assets_lab/math.png" alt="">
+    </div>
+  </div>
+  <div class="main_task-container">
+        <div class="main_task-text">
+            <p class="main_task-text-work">Ход работы</p>
+        </div>
+        <div class="main_tasks-code-all_lab_four">
+            <div class="main_task-code-one">
+                <div class="main_task-code">
+                    <p class="main_text-one">Первая задача</p>
+                    <p class="main_text-two">Даны  целые  положительные  числа  M и  N. Сформировать целочисленную матрицу размера M × N, у которой все  элементы  I -й строки  имеют значение 10·I (I = 1, . . ., M ).</p>
+                            <?php
+                                // Размеры матрицы
+                                $M = 0; //Строки
+                                $N = 0; //Столбцы
+                                
+                                // Создаём пустой двумерный массив для матрицы
+                                $matrix = [];
+                                
+                                // Проходим по каждой строке матрицы
+                                for ($i = 1; $i <= $M; $i++) {
+                                    // Проходим по каждому элементу в текущей строке
+                                    for ($j = 1; $j <= $N; $j++) {
+                                        // Устанавливаем значение текущего элемента равным 10 умноженному на номер строки
+                                        $matrix[$i][$j] = 10 * $i;
+                                    }
+                                }
+                                
+                                // Проходим по каждой строке матрицы
+                                foreach ($matrix as $row) {
+                                    // Проходим по каждому элементу в текущей строке
+                                    foreach ($row as $value) {
+                                        // Выводим значение текущего элемента
+                                        echo $value . ' ';
+                                    }
+                                    echo "<br>";
+                                }
+                                ?>
+                </div>
+            </div>
+            <div class="main_task-code-two">
+                <div class="main_task-code">
+                    <p class="main_text-one">Вторая задача</p>
+                    <p class="main_text-two">Дана  матрица  размера  M × N.  Поменять  местами  строки,  содержащие минимальный и максимальный элементы матрицы.</p>
+                    <?php
+                    //Создаём двумерный массив
+                        $a = [
+                            [1,1,1],
+                            [1,1,1],
+                        ];
+                        
+                        $MaxI = $MaxJ = $MinI = $MinJ = 0; //Создаём перемнные max min
+                        
+                        for ($j = 0; $j < 3; $j++) {  // Проходим по каждой строке матрицы
+                            for ($i = 1; $i < 2; $i++) { // Проходим по каждому элементу в текущей строке
+                                if ($a[$i][$j] > $a[$MaxI][$MaxJ]) { //Если текущий элемент больше чем предыдущий, присваиваем новый максимум
+                                    $MaxI = $i;
+                                    $MaxJ = $j;
+                                }
+                                if ($a[$i][$j] < $a[$MinI][$MinJ]) { //Если текущий элемент меньше чем предыдущий, присваиваем новый минимум
+                                    $MinI = $i;
+                                    $MinJ = $j;
+                                }
+                            }
+                        }
+                        //Меняем элементы и строки местами
+                        if ($MaxI !== $MinI) {
+                            for ($j = 0; $j < 3; $j++) {
+                                $temp = $a[$MaxI][$j];
+                                $a[$MaxI][$j] = $a[$MinI][$j];
+                                $a[$MinI][$j] = $temp;
+                            }
+                        }
+                        //Формируем вывод матрицы
+                        for ($i = 0; $i < 2; $i++) {
+                            echo implode(" , ", $a[$i]) . "<br>";
+                        }
+                        
+                        ?>
+                </div>
+            </div>
+            </div>
+            </div>
+             <div class="Lab_four">
+    <div class="main_text">
+      <p class="main_text-lab">Лабораторная работа №8</p>
+    </div>
+  <div class="description">
+    <div class="purposes_flex-lab">
+    <div class="purposes_text-lab">
+      <p class="task">Цели и задачи:</p>
+      <p>-изучение способов передачи параметров, описания и вызова функций.</p>
+      <p>-Написание и отладка программы, содержащей функции.</p>
+    </div>
+    <div class="tasks_text-lab">
+      <p class="task">Задание к работе:</p>
+      <p>-Написать  программу решения  задачи  в соответствии с  индивидуальным  вариантом.</p>
+      <p>-Сделать отчет и прикрепить ссылку на GitHub (footer)</p>
+    </div>
+    </div>
+    <div class="img_description">
+      <img class="img_description-lab" src="./assets_lab/math.png" alt="">
+    </div>
+  </div>
+  <div class="main_task-container">
+        <div class="main_task-text">
+            <p class="main_task-text-work">Ход работы</p>
+        </div>
+        <div class="main_tasks-code-all_lab_four">
+            <div class="main_task-code-one">
+                <div class="main_task-code">
+                    <p class="main_text-one">Первая задача</p>
+                    <p class="main_text-two">Написать функцию f(x), вычисляющую и возвращающую куб числа x. С ее помощью вычислить кубы чисел A,B,C и D.</p>
+                           <?php
+                            // Создаём функцию по нахождению куба числа
+                            function f($x) {
+                                return $x * $x * $x;
+                            }
+                            // Создаём переменные
+                            $A = 10;
+                            $B = 20;
+                            $C = 30;
+                            $D = 40;
+                            
+                            // Вычисление кубов чисел A, B, C и D с помощью функции
+                            $kubA = f($A);
+                            $kubB = f($B);
+                            $kubC = f($C);
+                            $kubD = f($D);
+                            
+                            // Вывод 
+                            echo "Куб числа A: $kubA<br>";
+                            echo "Куб числа B: $kubB<br>";
+                            echo "Куб числа C: $kubC<br>";
+                            echo "Куб числа D: $kubD<br>";
+                            ?>
+                </div>
+            </div>
+            <div class="main_task-code-two">
+                <div class="main_task-code">
+                    <p class="main_text-one">Вторая задача</p>
+                    <p class="main_text-two">Для  любого  задания  лабораторных  работ №  5  и  №6  реализовать  ввод, формирование/обработку и вывод массивов с применением функций.</p>
+                    <form method="post" class="form-container">
+                        <div class="form-group">
+                            <input type="number" name="n" placeholder="Введите N">
+                        </div>
+                        <input type="submit" value="Выполнить">
+                    </form>
+                    <?php
+                    // Функция для формирования массива из N первых положительных нечетных чисел
+                    function generateArray($n) {
+                        $array = array();
+                        for ($i = 1; $i <= $n; $i++) {
+                            $array[] = $i * 2 - 1;
+                        }
+                        return $array;
+                    }
+                    
+                    // Проверка, были ли отправлены данные методом POST с ключом 'n'
+                    if (isset($_POST['n'])) {
+                        $n = $_POST['n'];
+                    
+                        // Формирование массива с аргументом n, который задали ранее
+                        $array = generateArray($n);
+                    
+                        // Вывод результата через цикл
+                        echo "Массив из $n чисел = ";
+                        foreach ($array as $number) {
+                            echo "$number ";
+                        }
+                    }
+                    ?>
+
+                </div>
+            </div>
 </main>
-<? include('template/footer.php')?>
+<?php include('../template/footer.php');
+    render_footer();
+?>
 </body>
 </html>

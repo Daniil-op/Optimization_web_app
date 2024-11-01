@@ -1,4 +1,8 @@
-<footer>
+<?php 
+function render_footer(){
+    $Year = 2024;
+    $name = "Daniil Sheveldin";
+    echo '<footer>
   <div class="footer">
     <div class="row">
         <a href="https://t.me/Lil_bo_peep22"><i class="fa fa-telegram"></i></a>
@@ -16,9 +20,11 @@
         </ul>
       </div>
     <div class="row">
-      <p class="row_text-down">ALTGTU Copyright © 2024 ALTGTU - All rights reserved || Making By: Daniil Sheveldin</p>
+      <p class="row_text-down">&copy; ' . $Year . ' ALTGTU - All rights reserved || Making By: ' . $name . '</p>
     </div>
   </div>
 </footer>
 </body>
-</html>
+</html>';
+}
+?>

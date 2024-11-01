@@ -1,5 +1,7 @@
-<body>
-  <header>
+<?php
+function render_header(){
+    echo '
+<header>
   <div class="main_menu">
     <div class="logotype">
         <img class="icon_svg" src="/template/assets_index/logo.svg" width="60" 
@@ -12,7 +14,7 @@
     <label for="burger-checkbox" class="burger"></label>
     <ul class="menu-list">
         <li><a href="./index.php" class="menu-item">Главная</a><li>
-        <li><a href="./lab.php" class="menu-item">Лабы</a><li>
+        <li><a href="./page/lab.php" class="menu-item">Лабы</a><li>
         <li><a href="#" class="menu-item">Задания</a><li>
         <li><a href="#" class="menu-item">Лекции</a><li>
     </ul>
@@ -21,7 +23,7 @@
       <div class="nav">
         <ul class="nav_object">
           <li><a href="./index.php">Главная</a></li>
-            <li><a href="./lab.php">Лабы</a></li>
+            <li><a href="./page/lab.php">Лабы</a></li>
             <li><a href="...">Задания</a></li>
             <li><a href="...">Лекции</a></li>
         </ul>
@@ -32,5 +34,6 @@
       <button class="register_button">Регистрация</button>
     </div>
 </header>
-</body>
-</html>
+</body>';
+}
+?>
