@@ -15,8 +15,9 @@ function render_header(){
     <ul class="menu-list">
         <li><a href="./index.php" class="menu-item">Главная</a><li>
         <li><a href="./page/lab.php" class="menu-item">Лабы</a><li>
-        <li><a href="#" class="menu-item">Задания</a><li>
-        <li><a href="#" class="menu-item">Лекции</a><li>
+        <li><a href="./page/quiz.php" class="menu-item">Квиз</a><li>
+        <li><a href="./page/stat.php" class="menu-item">Результаты</a><li>
+        <li><a href="./page/login.php" class="menu-item">Чат</a><li>
     </ul>
 </div>
     <div class=menu_link> <!--Навигация-->
@@ -24,8 +25,9 @@ function render_header(){
         <ul class="nav_object">
           <li><a href="./index.php">Главная</a></li>
             <li><a href="./page/lab.php">Лабы</a></li>
-            <li><a href="...">Задания</a></li>
-            <li><a href="...">Лекции</a></li>
+            <li><a href="./page/quiz.php">Квиз</a></li>
+            <li><a href="./page/stat.php">Результаты</a></li>
+            <li><a href="./page/login.php" class="menu-item">Чат</a><li>
         </ul>
       </div>
     </div>

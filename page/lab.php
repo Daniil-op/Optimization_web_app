@@ -16,8 +16,6 @@
 <body>
     <?php include('../template/header.php');
     render_header();
-    include('../template/menu_lab.php');
-    render_menu();
     ?>
 <main>
   <div class="Lab_three">
